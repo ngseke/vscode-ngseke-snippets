@@ -3,7 +3,7 @@
   "displayName": "ngseke's snippets",
   "publisher": "ngseke",
   "icon": "images/icon.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A customized fork of the original extension by capaj",
   "repository": {
     "type": "git",
@@ -35,12 +35,20 @@
         "path": "./snippets/javascript.json"
       },
       {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
         "language": "javascriptreact",
         "path": "./snippets/javascript.json"
       },
       {
         "language": "typescriptreact",
         "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescript.json"
       },
       {
         "language": "javascriptreact",

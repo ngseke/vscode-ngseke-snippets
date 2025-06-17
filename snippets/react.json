@@ -50,10 +50,9 @@
   "useCallback": {
     "prefix": "uc",
     "body": [
-      "const ${1:memoizedCallback} = useCallback(",
-      "\t() => {${2}},",
-      "\t[],",
-      ")$0"
+      "const ${1:callback} = useCallback(() => {",
+      "\t${2}",
+      "}, [${3}])"
     ],
     "description": "React useCallback() hook"
   },

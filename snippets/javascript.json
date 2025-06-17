@@ -307,10 +307,6 @@
     "prefix": "fo",
     "body": "for (const ${1:item} of ${2:source}) {\n\t${0}\n}"
   },
-  "while iteration decrementing": {
-    "prefix": "wid",
-    "body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
-  },
   "throw new Error": {
     "prefix": "tn",
     "body": "throw new ${0:error}"
@@ -419,18 +415,6 @@
     "prefix": "m",
     "body": "${1:method} (${2:arguments}) {\n\t${0}\n}"
   },
-  "getter": {
-    "prefix": "get",
-    "body": "get ${1:property} () {\n\t${0}\n}"
-  },
-  "setter": {
-    "prefix": "set",
-    "body": "set ${1:property} (${2:value}) {\n\t${0}\n}"
-  },
-  "getter + setter": {
-    "prefix": "gs",
-    "body": "get ${1:property} () {\n\t${0}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
-  },
   "Object.assign": {
     "prefix": "oa",
     "body": "Object.assign(${1:dest}, ${2:source})"
@@ -439,9 +423,9 @@
     "prefix": "oc",
     "body": "Object.create(${1:obj})"
   },
-  "Object.getOwnPropertyDescriptor": {
-    "prefix": "og",
-    "body": "Object.getOwnPropertyDescriptor(${1:obj}, '${2:prop}')"
+  "Object.fromEntries": {
+    "prefix": "ofe",
+    "body": "Object.fromEntries(${1:entries})"
   },
   "ternary": {
     "prefix": "te",
@@ -450,10 +434,6 @@
   "ternary assignment": {
     "prefix": "ta",
     "body": "const ${0} = ${1:cond} ? ${2:true} : ${3:false}"
-  },
-  "Object.defineProperty": {
-    "prefix": "od",
-    "body": "Object.defineProperty(${1:dest}, '${2:prop}', {\n\t${0}\n})"
   },
   "Object.keys": {
     "prefix": "ok",
@@ -470,10 +450,6 @@
   "return": {
     "prefix": "r",
     "body": "return ${0}"
-  },
-  "yield": {
-    "prefix": "y",
-    "body": "yield ${0}"
   },
   "return true": {
     "prefix": "rt",

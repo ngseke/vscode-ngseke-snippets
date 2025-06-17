@@ -1,0 +1,6 @@
+{
+  "Record<string, any>": {
+    "prefix": "rsa",
+    "body": "Record<string, ${0:any}>"
+  }
+}

@@ -111,33 +111,13 @@
     "prefix": "afe",
     "body": "afterEach(() => {\n\t${0}\n})"
   },
-  "require": {
-    "prefix": "rq",
-    "body": "require('${1:module}')"
-  },
-  "const module = require('module')": {
-    "prefix": "cr",
-    "body": "const ${1:module} = require('${1:module}')"
-  },
-  "exports.member": {
-    "prefix": "em",
-    "body": "exports.${1:member} = ${2:value}"
-  },
-  "module.exports": {
-    "prefix": "me",
-    "body": "module.exports = ${1:name}"
-  },
   "module as class": {
     "prefix": "mec",
     "body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
   },
-  "event handler": {
-    "prefix": "on",
-    "body": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${0}\n})"
-  },
   "dom event cancel default and propagation": {
     "prefix": "evc",
-    "body": "ev.preventDefault()\nev.stopPropagation()\nreturn false"
+    "body": "event.preventDefault()\nevent.stopPropagation()\n"
   },
   "addEventListener": {
     "prefix": "ae",
@@ -175,18 +155,6 @@
     "prefix": "cel",
     "body": "${1:document}.createElement(${2:elem})"
   },
-  "classList.add": {
-    "prefix": "hecla",
-    "body": "${1:el}.classList.add('${2:class}')"
-  },
-  "classList.remove": {
-    "prefix": "heclr",
-    "body": "${1:el}.classList.remove('${2:class}')"
-  },
-  "classList.toggle": {
-    "prefix": "hect",
-    "body": "${1:el}.classList.toggle('${2:class}')"
-  },
   "getAttribute": {
     "prefix": "hega",
     "body": "${1:el}.getAttribute('${2:attr}')"
@@ -206,46 +174,6 @@
   "removeChild": {
     "prefix": "herc",
     "body": "${1:el}.removeChild(${2:elem})"
-  },
-  "forEach loop": {
-    "prefix": "fe",
-    "body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
-  },
-  "map": {
-    "prefix": "map",
-    "body": "${1:iterable}.map((${2:item}) => {\n\t${0}\n})"
-  },
-  "map single desctructured argument": {
-    "prefix": "mapsd",
-    "body": "${1:iterable}.map(({${2:item}}) => ${2:item})"
-  },
-  "reduce": {
-    "prefix": "reduce",
-    "body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})"
-  },
-  "filter": {
-    "prefix": "filter",
-    "body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})"
-  },
-  "find": {
-    "prefix": "find",
-    "body": "${1:iterable}.find((${2:item}) => {\n\t${0}\n})"
-  },
-  "every": {
-    "prefix": "every",
-    "body": "${1:iterable}.every((${2:item}) => {\n\t${0}\n})"
-  },
-  "some": {
-    "prefix": "some",
-    "body": "${1:iterable}.some((${2:item}) => {\n\t${0}\n})"
-  },
-  "var statement": {
-    "prefix": "v",
-    "body": "var ${1:name}"
-  },
-  "var assignment": {
-    "prefix": "va",
-    "body": "var ${1:name} = ${2:value}"
   },
   "let statement": {
     "prefix": "l",
@@ -283,10 +211,6 @@
     "prefix": "cy",
     "body": "const ${1:name} = yield ${2:value}"
   },
-  "let assignment yielded": {
-    "prefix": "ly",
-    "body": "let ${1:name} = yield ${2:value}"
-  },
   "const object": {
     "prefix": "co",
     "body": "const ${1:name} = {\n\t${0}\n}"
@@ -294,14 +218,6 @@
   "const array": {
     "prefix": "car",
     "body": "const ${1:name} = [\n\t${0}\n]"
-  },
-  "generate array of integers starting with 1": {
-    "prefix": "gari",
-    "body": "Array.from({ length: ${1:length} }, (v, k) => k + 1)"
-  },
-  "generate array of integers starting with 0": {
-    "prefix": "gari0",
-    "body": "[...Array(${1:length}).keys()]"
   },
   "class": {
     "prefix": "cs",
@@ -321,11 +237,15 @@
   },
   "export named function": {
     "prefix": "ef",
-    "body": "export function ${1:member} (${2:arguments}) {\n\t${0}\n}"
+    "body": "export function ${TM_FILENAME_BASE} (${2:arguments}) {\n\t${0}\n}"
+  },
+  "export named async function": {
+    "prefix": "easf",
+    "body": "export async function ${TM_FILENAME_BASE} (${2:arguments}) {\n\t${0}\n}"
   },
   "module default export": {
     "prefix": "ed",
-    "body": "export default ${1:member}"
+    "body": "export default ${TM_FILENAME_BASE}"
   },
   "module default export function": {
     "prefix": "edf",
@@ -359,10 +279,6 @@
     "prefix": "ia",
     "body": "Array.isArray(${1:source})"
   },
-  "let and if statement": {
-    "prefix": "lif",
-    "body": "let ${0} \n if (${2:condition}) {\n\t${1}\n}"
-  },
   "if statement": {
     "prefix": "i",
     "body": "if (${1:condition}) {\n\t${0}\n}"
@@ -389,15 +305,7 @@
   },
   "for of loop": {
     "prefix": "fo",
-    "body": "for (const ${1:key} of ${2:source}) {\n\t${0}\n}"
-  },
-  "while iteration decrementing": {
-    "prefix": "wid",
-    "body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
-  },
-  "while loop": {
-    "prefix": "wl",
-    "body": "while (${1:condition}) {\n\t${0}\n}"
+    "body": "for (const ${1:item} of ${2:source}) {\n\t${0}\n}"
   },
   "throw new Error": {
     "prefix": "tn",
@@ -425,7 +333,7 @@
   },
   "async function": {
     "prefix": "asf",
-    "body": "async function (${1:arguments}) {\n\t${0}\n}"
+    "body": "async function ${1:name} (${2:arguments}) {\n\t${0}\n}"
   },
   "async arrow function": {
     "prefix": "aa",
@@ -433,11 +341,11 @@
   },
   "immediately-invoked function expression": {
     "prefix": "iife",
-    "body": ";(function (${1:arguments}) {\n\t${0}\n})(${2})"
+    "body": "(() => {\n\t${0}\n})()"
   },
   "async immediately-invoked function expression": {
     "prefix": "aiife",
-    "body": ";(async (${1:arguments}) => {\n\t${0}\n})(${2})"
+    "body": "(async () => {\n\t${0}\n})()"
   },
   "arrow function": {
     "prefix": "af",
@@ -467,14 +375,6 @@
     "prefix": "fr",
     "body": "(${1:arguments}) => {\n\treturn ${0}\n}"
   },
-  "generator function": {
-    "prefix": "gf",
-    "body": "function* (${1:arguments}) {\n\t${0}\n}"
-  },
-  "named generator": {
-    "prefix": "gfn",
-    "body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
-  },
   "console.log": {
     "prefix": "cl",
     "body": "console.log(${0})"
@@ -491,6 +391,10 @@
     "prefix": "cw",
     "body": "console.warn(${0})"
   },
+  "console.info": {
+    "prefix": "ci",
+    "body": "console.info(${0})"
+  },
   "console.dir": {
     "prefix": "cod",
     "body": "console.dir('${0}:', ${0})"
@@ -498,10 +402,6 @@
   "constructor": {
     "prefix": "cn",
     "body": "constructor () {\n\t${0}\n}"
-  },
-  "use strict": {
-    "prefix": "uss",
-    "body": "'use strict'"
   },
   "JSON.stringify()": {
     "prefix": "js",
@@ -515,22 +415,6 @@
     "prefix": "m",
     "body": "${1:method} (${2:arguments}) {\n\t${0}\n}"
   },
-  "getter": {
-    "prefix": "get",
-    "body": "get ${1:property} () {\n\t${0}\n}"
-  },
-  "setter": {
-    "prefix": "set",
-    "body": "set ${1:property} (${2:value}) {\n\t${0}\n}"
-  },
-  "getter + setter": {
-    "prefix": "gs",
-    "body": "get ${1:property} () {\n\t${0}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
-  },
-  "prototype method": {
-    "prefix": "proto",
-    "body": "${1:Class}.prototype.${2:method} = function (${3:arguments}) {\n\t${0}\n}"
-  },
   "Object.assign": {
     "prefix": "oa",
     "body": "Object.assign(${1:dest}, ${2:source})"
@@ -539,9 +423,9 @@
     "prefix": "oc",
     "body": "Object.create(${1:obj})"
   },
-  "Object.getOwnPropertyDescriptor": {
-    "prefix": "og",
-    "body": "Object.getOwnPropertyDescriptor(${1:obj}, '${2:prop}')"
+  "Object.fromEntries": {
+    "prefix": "ofe",
+    "body": "Object.fromEntries(${1:entries})"
   },
   "ternary": {
     "prefix": "te",
@@ -550,10 +434,6 @@
   "ternary assignment": {
     "prefix": "ta",
     "body": "const ${0} = ${1:cond} ? ${2:true} : ${3:false}"
-  },
-  "Object.defineProperty": {
-    "prefix": "od",
-    "body": "Object.defineProperty(${1:dest}, '${2:prop}', {\n\t${0}\n})"
   },
   "Object.keys": {
     "prefix": "ok",
@@ -571,17 +451,13 @@
     "prefix": "r",
     "body": "return ${0}"
   },
-  "return arrow function": {
-    "prefix": "rf",
-    "body": "return (${1:arguments}) => ${2:statement}"
-  },
-  "yield": {
-    "prefix": "y",
-    "body": "yield ${0}"
-  },
-  "return this": {
+  "return true": {
     "prefix": "rt",
-    "body": "return this"
+    "body": "return true"
+  },
+  "return false": {
+    "prefix": "rf",
+    "body": "return false"
   },
   "return null": {
     "prefix": "rn",
@@ -598,15 +474,5 @@
   "return promise": {
     "prefix": "rp",
     "body": "return new Promise((resolve, reject) => {\n\t${0}\n})"
-  },
-  "wrap selection in arrow function": {
-    "prefix": "wrap selection in arrow function",
-    "body": "() => {\n\t{$TM_SELECTED_TEXT}\n}",
-    "description": "wraps text in arrow function"
-  },
-  "wrap selection in async arrow function": {
-    "prefix": "wrap selection in async arrow function",
-    "body": "async () => {\n\t{$TM_SELECTED_TEXT}\n}",
-    "description": "wraps text in arrow function"
   }
 }

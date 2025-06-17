@@ -1,13 +1,13 @@
 {
-  "name": "vscode-standardjs-snippets",
-  "displayName": "JavaScript standardjs styled snippets",
-  "publisher": "capaj",
-  "icon": "images/javascript.png",
-  "version": "0.9.0",
-  "description": "standardjs styled javascript snippets for visual studio code",
+  "name": "vscode-ngseke-snippets",
+  "displayName": "ngseke's snippets",
+  "publisher": "ngseke",
+  "icon": "images/icon.png",
+  "version": "0.0.2",
+  "description": "A customized fork of the original extension by capaj",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capaj/vscode-standardjs-snippets.git"
+    "url": "git+https://github.com/ngseke/vscode-ngseke-snippets.git"
   },
   "engines": {
     "vscode": "0.10.x"
@@ -15,12 +15,12 @@
   "scripts": {
     "pub": "vsce publish"
   },
-  "author": "capajj@gmail.com",
+  "author": "ngseke@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/capaj/vscode-standardjs-snippets/issues"
+    "url": "https://github.com/ngseke/vscode-ngseke-snippets/issues"
   },
-  "homepage": "https://github.com/capaj/vscode-standardjs-snippets#readme",
+  "homepage": "https://github.com/ngseke/vscode-ngseke-snippets",
   "categories": [
     "Snippets"
   ],
@@ -35,12 +35,20 @@
         "path": "./snippets/javascript.json"
       },
       {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
         "language": "javascriptreact",
         "path": "./snippets/javascript.json"
       },
       {
         "language": "typescriptreact",
         "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescript.json"
       },
       {
         "language": "javascriptreact",
@@ -48,15 +56,7 @@
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/react-ts.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/apollo.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/apollo.json"
+        "path": "./snippets/react.json"
       }
     ]
   }

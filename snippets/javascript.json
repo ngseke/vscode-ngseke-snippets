@@ -399,6 +399,14 @@
     "prefix": "cod",
     "body": "console.dir('${0}:', ${0})"
   },
+  "console.time": {
+    "prefix": "ct",
+    "body": "console.time(${0})"
+  },
+  "console.timeEnd": {
+    "prefix": "cte",
+    "body": "console.timeEnd(${0})"
+  },
   "constructor": {
     "prefix": "cn",
     "body": "constructor () {\n\t${0}\n}"

@@ -2,5 +2,9 @@
   "Record<string, any>": {
     "prefix": "rsa",
     "body": "Record<string, ${0:any}>"
+  },
+  "export type": {
+    "prefix": "et",
+    "body": "export type ${1:Type} = ${2:any}"
   }
 }

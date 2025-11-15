@@ -67,113 +67,17 @@
     "prefix": "pc",
     "body": "${1:promise}.catch(error => {\n\t${0}\n})"
   },
-  "describe": {
-    "prefix": "desc",
-    "body": "describe('${1:description}', () => {\n\t${0}\n})"
-  },
-  "describe top level": {
-    "prefix": "dt",
-    "body": "describe('${TM_FILENAME_BASE}', () => {\n\t${0}\n})"
-  },
-  "it asynchronous": {
-    "prefix": "it",
-    "body": "it('${1:description}', async () => {\n\t${0}\n})"
-  },
-  "it.todo": {
-    "prefix": "itt",
-    "body": "it.todo('${1:description}')"
-  },
-  "it with a callback": {
-    "prefix": "itd",
-    "body": "it('${1:description}', (done) => {\n\t${0}\n})"
-  },
-  "it synchronous": {
-    "prefix": "its",
-    "body": "it('${1:description}', () => {\n\t${0}\n})"
-  },
-  "before": {
-    "prefix": "bf",
-    "body": "before(async () => {\n\t${0}\n})"
-  },
-  "beforeAll": {
-    "prefix": "ba",
-    "body": "beforeAll(async () => {\n\t${0}\n})"
-  },
-  "beforeEach": {
-    "prefix": "bfe",
-    "body": "beforeEach(async () => {\n\t${0}\n})"
-  },
-  "after": {
-    "prefix": "aft",
-    "body": "after(() => {\n\t${0}\n})"
-  },
-  "afterEach": {
-    "prefix": "afe",
-    "body": "afterEach(() => {\n\t${0}\n})"
-  },
-  "module as class": {
-    "prefix": "mec",
-    "body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
-  },
   "dom event cancel default and propagation": {
     "prefix": "evc",
     "body": "event.preventDefault()\nevent.stopPropagation()\n"
   },
-  "addEventListener": {
-    "prefix": "ae",
-    "body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"
-  },
-  "removeEventListener": {
-    "prefix": "rel",
-    "body": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
-  },
-  "getElementById": {
-    "prefix": "gi",
-    "body": "${1:document}.getElementById('${2:id}')"
-  },
-  "getElementsByClassName": {
-    "prefix": "gc",
-    "body": "Array.from(${1:document}.getElementsByClassName('${2:class}'))"
-  },
-  "getElementsByTagName": {
-    "prefix": "gt",
-    "body": "Array.from(${1:document}.getElementsByTagName('${2:tag}'))"
-  },
   "querySelector": {
     "prefix": "qs",
-    "body": "${1:document}.querySelector('${2:selector}')"
+    "body": "document.querySelector('${1:selector}')"
   },
   "querySelectorAll": {
     "prefix": "qsa",
-    "body": "Array.from(${1:document}.querySelectorAll('${2:selector}'))"
-  },
-  "createDocumentFragment": {
-    "prefix": "cdf",
-    "body": "${1:document}.createDocumentFragment(${2:elem})"
-  },
-  "createElement": {
-    "prefix": "cel",
-    "body": "${1:document}.createElement(${2:elem})"
-  },
-  "getAttribute": {
-    "prefix": "hega",
-    "body": "${1:el}.getAttribute('${2:attr}')"
-  },
-  "removeAttribute": {
-    "prefix": "hera",
-    "body": "${1:el}.removeAttribute('${2:attr}')"
-  },
-  "setAttribute": {
-    "prefix": "hesa",
-    "body": "${1:el}.setAttribute('${2:attr}', ${3:value})"
-  },
-  "appendChild": {
-    "prefix": "heac",
-    "body": "${1:el}.appendChild(${2:elem})"
-  },
-  "removeChild": {
-    "prefix": "herc",
-    "body": "${1:el}.removeChild(${2:elem})"
+    "body": "[...document.querySelectorAll('${1:selector}')]"
   },
   "let statement": {
     "prefix": "l",
@@ -189,7 +93,7 @@
   },
   "const statement from array destructuring": {
     "prefix": "cad",
-    "body": "const [ ${2:prop} ] = ${1:value}"
+    "body": "const [${2:prop}] = ${1:value}"
   },
   "const assignment awaited": {
     "prefix": "ca",
@@ -198,14 +102,6 @@
   "const destructuring assignment awaited": {
     "prefix": "cda",
     "body": "const { ${1:name} } = await ${2:value}"
-  },
-  "const arrow function assignment": {
-    "prefix": "cf",
-    "body": "const ${1:name} = (${2:arguments}) => {\n\treturn ${0}\n}"
-  },
-  "let assignment awaited": {
-    "prefix": "la",
-    "body": "let ${1:name} = await ${2:value}"
   },
   "const assignment yielded": {
     "prefix": "cy",
@@ -219,14 +115,6 @@
     "prefix": "car",
     "body": "const ${1:name} = [\n\t${0}\n]"
   },
-  "class": {
-    "prefix": "cs",
-    "body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}"
-  },
-  "class extends": {
-    "prefix": "csx",
-    "body": "class ${1:name} extends ${2:base} {\n\tconstructor (${3:arguments}) {\n\t\tsuper(${3:arguments})\n\t\t${0}\n\t}\n}"
-  },
   "module export": {
     "prefix": "e",
     "body": "export ${1:member}"
@@ -237,11 +125,11 @@
   },
   "export named function": {
     "prefix": "ef",
-    "body": "export function ${TM_FILENAME_BASE} (${2:arguments}) {\n\t${0}\n}"
+    "body": "export function ${TM_FILENAME_BASE} () {\n\t${0}\n}"
   },
   "export named async function": {
     "prefix": "easf",
-    "body": "export async function ${TM_FILENAME_BASE} (${2:arguments}) {\n\t${0}\n}"
+    "body": "export async function ${TM_FILENAME_BASE} () {\n\t${0}\n}"
   },
   "module default export": {
     "prefix": "ed",
@@ -249,7 +137,7 @@
   },
   "module default export function": {
     "prefix": "edf",
-    "body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+    "body": "export default function ${TM_FILENAME_BASE} () {\n\t${0}\n}"
   },
   "import module": {
     "prefix": "im",
@@ -307,9 +195,9 @@
     "prefix": "fo",
     "body": "for (const ${1:item} of ${2:source}) {\n\t${0}\n}"
   },
-  "throw new Error": {
-    "prefix": "tn",
-    "body": "throw new ${0:error}"
+  "throw Error()": {
+    "prefix": "te",
+    "body": "throw ${0:Error()}"
   },
   "try/catch": {
     "prefix": "tc",
@@ -325,19 +213,19 @@
   },
   "anonymous function": {
     "prefix": "fan",
-    "body": "function (${1:arguments}) {${0}}"
+    "body": "function () {${0}}"
   },
   "named function": {
     "prefix": "fn",
-    "body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+    "body": "function ${1:name} () {\n\t${0}\n}"
   },
   "async function": {
     "prefix": "asf",
-    "body": "async function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+    "body": "async function ${1:name} () {\n\t${0}\n}"
   },
   "async arrow function": {
     "prefix": "aa",
-    "body": "async (${1:arguments}) => {\n\t${0}\n}"
+    "body": "async () => {\n\t${0}\n}"
   },
   "immediately-invoked function expression": {
     "prefix": "iife",
@@ -349,31 +237,23 @@
   },
   "arrow function": {
     "prefix": "af",
-    "body": "(${1:arguments}) => ${2:statement}"
-  },
-  "identity arrow function": {
-    "prefix": "afi",
-    "body": "(v) => v"
+    "body": "() => ${1:statement}"
   },
   "arrow function with destructuring": {
     "prefix": "fd",
-    "body": "({${1:arguments}}) => ${2:statement}"
-  },
-  "arrow function with destructuring returning destructured": {
-    "prefix": "fdr",
-    "body": "({${1:arguments}}) => ${1:arguments}"
+    "body": "({${1}}) => ${2:statement}"
   },
   "arrow function with body": {
     "prefix": "f",
-    "body": "(${1:arguments}) => {\n\t${0}\n}"
+    "body": "() => {\n\t${0}\n}"
   },
   "arrow function returning single object": {
     "prefix": "fro",
-    "body": "(${1:arguments}) => ({\n\t${0}\n})"
+    "body": "() => ({\n\t${0}\n})"
   },
   "arrow function with return": {
     "prefix": "fr",
-    "body": "(${1:arguments}) => {\n\treturn ${0}\n}"
+    "body": "() => {\n\treturn ${0}\n}"
   },
   "console.log": {
     "prefix": "cl",
@@ -395,10 +275,6 @@
     "prefix": "ci",
     "body": "console.info(${0})"
   },
-  "console.dir": {
-    "prefix": "cod",
-    "body": "console.dir('${0}:', ${0})"
-  },
   "console.time": {
     "prefix": "ct",
     "body": "console.time(${0})"
@@ -406,10 +282,6 @@
   "console.timeEnd": {
     "prefix": "cte",
     "body": "console.timeEnd(${0})"
-  },
-  "constructor": {
-    "prefix": "cn",
-    "body": "constructor () {\n\t${0}\n}"
   },
   "JSON.stringify()": {
     "prefix": "js",
@@ -419,25 +291,13 @@
     "prefix": "jp",
     "body": "JSON.parse($0)"
   },
-  "method": {
-    "prefix": "m",
-    "body": "${1:method} (${2:arguments}) {\n\t${0}\n}"
-  },
   "Object.assign": {
     "prefix": "oa",
     "body": "Object.assign(${1:dest}, ${2:source})"
   },
-  "Object.create": {
-    "prefix": "oc",
-    "body": "Object.create(${1:obj})"
-  },
   "Object.fromEntries": {
     "prefix": "ofe",
     "body": "Object.fromEntries(${1:entries})"
-  },
-  "ternary": {
-    "prefix": "te",
-    "body": "${1:cond} ? ${2:true} : ${3:false}"
   },
   "ternary assignment": {
     "prefix": "ta",
@@ -482,5 +342,13 @@
   "return promise": {
     "prefix": "rp",
     "body": "return new Promise((resolve, reject) => {\n\t${0}\n})"
+  },
+  "Promise Sleep": {
+    "prefix": "sleep",
+    "body": "await new Promise(resolve => setTimeout(resolve, ${1:1000}))"
+  },
+  "new": {
+    "prefix": "n",
+    "body": "new"
   }
 }

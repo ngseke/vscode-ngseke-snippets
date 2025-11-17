@@ -155,10 +155,6 @@
     "prefix": "to",
     "body": "typeof ${1:source} === '${2:undefined}'"
   },
-  "this": {
-    "prefix": "t",
-    "body": "this."
-  },
   "instanceof": {
     "prefix": "iof",
     "body": "${1:source} instanceof ${2:Object}"

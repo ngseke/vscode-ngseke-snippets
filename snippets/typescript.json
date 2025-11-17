@@ -6,5 +6,9 @@
   "export type": {
     "prefix": "et",
     "body": "export type ${1:Type} = ${2:any}"
+  },
+  "type": {
+    "prefix": "t",
+    "body": "type"
   }
 }
